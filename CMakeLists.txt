@@ -5,6 +5,7 @@ include(CTest)
 enable_testing()
 
 add_executable(project2 main.cpp)
+add_test(project2 test.cpp)
 
 set(CPACK_PROJECT_NAME ${PROJECT_NAME})
 set(CPACK_PROJECT_VERSION ${PROJECT_VERSION})
