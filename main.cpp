@@ -27,10 +27,7 @@ vector<int> merge_tail (vector<int>& tail1, vector<int>& tail2) {
     
     // Compare every element in range and keep the bigger element
     for (int i = 0; i < range; i++) {
-        if (tail1[i] > tail2[i]) 
-            result[i] = tail1[i];
-        else 
-            result[i] = tail2[i];
+        result[i] = tail1[i] > tail2[i] ? tail1[i] : tail2[i];
     }
     return result;
 }
@@ -129,7 +126,7 @@ int main()
     vector<int> list1 = {0}; // Stream 1
     vector<int> list2 = {0}; // Stream 2
     // Active code switcher: add or remove the first slash to toggle code
-    //*     
+    /*     
     cin >> N >> M;
     int temp;
     for(int n = 0; n < N; n++){
@@ -146,16 +143,16 @@ int main()
     //*/ 
 
     // Get starting timepoint
-    // auto start = high_resolution_clock::now();
+    auto start = high_resolution_clock::now();
 
     cout << get_longest_sequence(list1,list2) << endl;
 
     // Get ending timepoint
-    // auto stop = high_resolution_clock::now();
+    auto stop = high_resolution_clock::now();
 
     // Calculate duraction with the start time and end time
-    // auto duration = duration_cast<milliseconds>(stop - start);
-    // cout << "Time taken by function: "
-    //      << duration.count() << " milliseconds" << endl;
+    auto duration = duration_cast<milliseconds>(stop - start);
+    cout << "Time taken by function: "
+         << duration.count() << " milliseconds" << endl;
     return 0;
 }
